@@ -27,7 +27,7 @@ class Daehan_GameViewController: UIViewController {
         
         if(replayingPastGame) {
             theGameModel.isPastGame = true
-            
+            // add some comment
             //play the moves from the past game
             let pastGameMoves = pastGameData?.orderOfMoves
             
