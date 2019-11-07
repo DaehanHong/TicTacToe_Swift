@@ -38,7 +38,7 @@ class Daehan_GameViewController: UIViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
                     let button = self.view.viewWithTag(move)
-                    self.squareTouched(button as! UIButton)
+                    self.playTheMove(button as! UIButton)
                 })
             }
             
@@ -50,7 +50,12 @@ class Daehan_GameViewController: UIViewController {
     //MARK:- IBAction
     
     @IBAction func squareTouched(_ sender: UIButton) {
-        
+        if (!replayingPastGame) {
+            playTheMove(sender)
+        }
+    }
+    
+    func playTheMove(_ sender: UIButton) {
         print("button touched")
         print(sender.tag)
         
