@@ -26,6 +26,7 @@ class Daehan_GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         if(replayingPastGame) {
+            navigationItem.title = "Past Game"
             theGameModel.isPastGame = true
             
             //play the moves from the past game
