@@ -9,6 +9,16 @@
 import UIKit
 
 class Daehan_TableViewCell: UITableViewCell {
+    
+    //MARK:- Class variables
+    var gameData : GameData?
+    
+    // MARK:- Outlets
+    
+    @IBOutlet weak var winLossImage: UIImageView!
+    @IBOutlet weak var whoWon: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
