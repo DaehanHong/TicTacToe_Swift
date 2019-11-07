@@ -27,13 +27,19 @@ class Daehan_GameViewController: UIViewController {
         
         if(replayingPastGame) {
             theGameModel.isPastGame = true
-            // add some comment
+            
             //play the moves from the past game
             let pastGameMoves = pastGameData?.orderOfMoves
             
+            var delay : Double = 0.0
+            
             for move in pastGameMoves! {
-                let button = view.viewWithTag(move)
-                squareTouched(button as! UIButton)
+                delay += 1.0
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                    let button = self.view.viewWithTag(move)
+                    self.squareTouched(button as! UIButton)
+                })
             }
             
         } else {
